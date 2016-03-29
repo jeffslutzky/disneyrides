@@ -1,0 +1,23 @@
+{
+  "name": "disneyrides",
+  "version": "1.0.0",
+  "description": "A Node/Express app for Disney rides",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffslutzky/disneyrides.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffslutzky/disneyrides/issues"
+  },
+  "homepage": "https://github.com/jeffslutzky/disneyrides#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
+  }
+}
