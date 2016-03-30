@@ -9,10 +9,32 @@ app.set('view engine', 'handlebars');
 
 app.set('port', process.env.PORT || 3000);
 
+var request = require('request');
+//
+// var options = {
+//   url: 'https://touringplans.com/magic-kingdom/attractions.json'
+// };
+//
+// var callback = function(error, response, body) {
+//   if (!error && response.statusCode == 200) {
+//     var info = JSON.parse(body);
+//     // console.log(info);
+//   }
+// }
+//
+// request(options, callback);
+
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-  res.render('index');
+  var url = 'https://touringplans.com/magic-kingdom/attractions.json';
+  request(url, function(error, response, data) {
+    if (!error && response.statusCode == 200) {
+      var data = JSON.parse(data);
+      res.render('index', {rides: data});
+    };
+  });
 });
 
 app.use(function(req, res, next){
